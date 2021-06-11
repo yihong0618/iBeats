@@ -24,7 +24,7 @@ def replace_readme_comments(file_name, comment_str, comments_name):
 
 
 def parse_ios_str_to_list(list_str):
-    l = list_str.split("\\n")
+    l = list_str.splitlines()
     # filter the empty value
     return [i for i in l if i]
 
