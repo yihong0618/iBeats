@@ -31,7 +31,7 @@ jobs:
           echo  ${{ github.event.inputs.test }}
       - name: Replace README
         run: |
-          python main.py ${{ github.event.inputs.time }} ${{ github.event.inputs.value }}
+          python main.py '${{ github.event.inputs.time }}' '${{ github.event.inputs.value }}'
       - name: Push new README
         uses: github-actions-x/commit@v2.6
         with:

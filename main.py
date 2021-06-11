@@ -4,8 +4,9 @@ import argparse
 GITHUB_README_COMMENTS = (
     "(<!--START_SECTION:{name}-->\n)(.*)(<!--END_SECTION:{name}-->\n)"
 )
-
+HEART_RATE_HEAD = "| Time | Rate | \n | ---- | ---- | \n"
 HEART_RATE_STAT_TEMPLATE = "| {time} | {value} |\n"
+
 
 def replace_readme_comments(file_name, comment_str, comments_name):
     with open(file_name, "r+") as f:
@@ -23,11 +24,22 @@ def replace_readme_comments(file_name, comment_str, comments_name):
 
 
 def parse_ios_str_to_list(list_str):
-	pass
+    return list_str.split("\n")
+
+
+def make_summary_str(time_list, value_list):
+    s = HEART_RATE_HEAD
+    for t, v in zip(time_list, value_list):
+        s += HEART_RATE_STAT_TEMPLATE.format(time=t, value=v)
+    return s
 
 
 def main(time_list_str, value_list_str):
-	print(time_list_str, value_list_str)
+    time_list = parse_ios_str_to_list(time_list_str)
+    value_list = parse_ios_str_to_list(value_list_str)
+    s = make_summary_str(time_list, value_list)
+    replace_readme_comments("README.md", s, "my_heart_rate")
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
