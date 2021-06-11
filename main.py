@@ -29,10 +29,8 @@ def parse_ios_str_to_list(list_str):
 
 def make_summary_str(time_list, value_list):
     s = HEART_RATE_HEAD
-    print(time_list)
     for t, v in zip(time_list, value_list):
         s += HEART_RATE_STAT_TEMPLATE.format(time=t, value=v)
-    print(s)
     return s
 
 
