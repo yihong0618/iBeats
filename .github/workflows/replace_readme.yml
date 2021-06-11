@@ -1,0 +1,43 @@
+name: Replace README
+
+on:
+  workflow_dispatch:
+    inputs:
+      time:
+        description: 'time list'
+        required: false
+      value:
+        description: 'value list'
+        required: false
+
+env:
+  # change env here
+  GITHUB_NAME: yihong0618
+  GITHUB_EMAIL: zouzou0208@gmail.com
+
+jobs:
+  sync:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.6
+      - name: Test
+        run: |
+          echo  ${{ github.event.inputs.test }}
+      - name: Replace README
+        run: |
+          python main.py ${{ github.event.inputs.time }} ${{ github.event.inputs.value }}
+      - name: Push new README
+        uses: github-actions-x/commit@v2.6
+        with:
+          github-token: ${{ secrets.G_T }}
+          commit-message: "Replace README"
+          files: README.md
+          rebase: 'true'
+          name: yihong0618 
+          email: zouzou0208@gmail.com
