@@ -1,7 +1,7 @@
 # iBeats
 Apple Watch 心率数据采集 - Your Soul, Your Beats!
 
-![](./files/heart_rate.svg)
+![](./files/heart.svg)
 
 <!--START_SECTION:my_heart_rate-->
 | Time | Rate | 
@@ -13,3 +13,5 @@ Apple Watch 心率数据采集 - Your Soul, Your Beats!
 | 2021-06-14T08:22:06+08:00 | 64 |
 
 <!--END_SECTION:my_heart_rate-->
+
+后续会完善教程，目前的方式请参考这篇推特：https://twitter.com/yihong06181/status/1403286390108934145?s=20
