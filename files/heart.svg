@@ -7,19 +7,13 @@
     <animateTransform attributeName="transform" type="scale" values="1; 1.2; 1; 1.2; 1; 1.4;" dur="3s"
       repeatCount="indefinite" additive="sum">
     </animateTransform>
-    <text style="font-size:15px; font-family:Arial"; fill="bisque" transform="translate(-9 0)" >
-    	<animate attributeName="opacity" dur="3s"
-			keyTimes="0;0.2;0.4;0.6;0.8;1"
-			repeatCount="indefinite"
-			values="0;1;1;0;0;0" />
-      70
-    </text>
-    <text style="font-size:15px; font-family:Arial"; fill="bisque" transform="translate(-9 0)" >
-    	<animate attributeName="opacity" dur="3s"
-			keyTimes="0;0.2;0.4;0.6;0.8;1"
-			repeatCount="indefinite"
-			values="1;0;0;1;1;1" />
+    <text transform="translate(-9 0)" fill="bisque">
+      <animate attributeName="opacity" dur="10s" keyTimes="0;0.2;0.6;1" repeatCount="indefinite" values="1;1;0;0" />
       65
+    </text>
+    <text transform="translate(-9 0)" fill="bisque">
+      <animate attributeName="opacity" dur="10s" keyTimes="0;0.2;0.6;1" repeatCount="indefinite" values="0;0;1;1" />
+      70
     </text>
   </g>
 </svg>
