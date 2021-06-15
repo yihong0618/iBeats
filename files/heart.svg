@@ -7,11 +7,11 @@
     <animateTransform attributeName="transform" type="scale" values="1; 1.2; 1; 1.2; 1; 1.4;" dur="3s"
       repeatCount="indefinite" additive="sum">
     </animateTransform>
-    <text transform="translate(-9 0)" fill="bisque">
+    <text transform="translate(-10 0)" font-size="25px" fill="bisque">
       <animate attributeName="opacity" dur="10s" keyTimes="0;0.2;0.6;1" repeatCount="indefinite" values="1;1;0;0" />
       65
     </text>
-    <text transform="translate(-9 0)" fill="bisque">
+    <text transform="translate(-10 0)" font-size="25px" fill="bisque">
       <animate attributeName="opacity" dur="10s" keyTimes="0;0.2;0.6;1" repeatCount="indefinite" values="0;0;1;1" />
       70
     </text>
