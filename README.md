@@ -35,6 +35,9 @@ Apple Watch 心率数据采集 - Your Soul, Your Beats!
 ![image](https://user-images.githubusercontent.com/15976103/122154236-186b4980-ce97-11eb-8e4b-70551a0391ae.png)
 ![image](https://user-images.githubusercontent.com/15976103/122154268-2d47dd00-ce97-11eb-902e-3acf292265a9.png)
 
+inputs
+![image](https://user-images.githubusercontent.com/15976103/122174055-fa144680-ceb4-11eb-9be2-3eb83cd516f7.png)
+
 3. 也可以参考 @L1cardo 分享的[捷径](https://www.icloud.com/shortcuts/6ab6047b459c41ad822ad6b94b1c03d4)
 4. 跑完 Actions 之后生成的 svg 引用到自己的 README 或 profile 中，我的[例子](https://github.com/yihong0618) 
 
