@@ -1,11 +1,15 @@
 import re
 import argparse
+import os
+
+from heart import Heart
 
 GITHUB_README_COMMENTS = (
     "(<!--START_SECTION:{name}-->\n)(.*)(<!--END_SECTION:{name}-->\n)"
 )
 HEART_RATE_HEAD = "| Time | Rate | \n | ---- | ---- | \n"
 HEART_RATE_STAT_TEMPLATE = "| {time} | {value} |\n"
+OUT_FOLDER = os.path.join(os.getcwd(), "files")
 
 
 def replace_readme_comments(file_name, comment_str, comments_name):
@@ -39,9 +43,15 @@ def make_summary_str(time_list, value_list):
 def main(time_list_str, value_list_str):
     time_list = parse_ios_str_to_list(time_list_str)
     value_list = parse_ios_str_to_list(value_list_str)
-    print(time_list, value_list)
+    value_list = [int(i) for i in value_list]
+
     s = make_summary_str(time_list, value_list)
     replace_readme_comments("README.md", s, "my_heart_rate")
+
+    # generate heart rate svg and save
+    h = Heart(os.path.join(OUT_FOLDER, "heart.svg"))
+    h.set_values(value_list)
+    h.make_heart_svg()
 
 
 if __name__ == "__main__":
