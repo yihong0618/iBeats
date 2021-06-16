@@ -22,7 +22,7 @@ Apple Watch 心率数据采集 - Your Soul, Your Beats!
 # 步骤
 1. 参考我的博客 -- [巧妙利用 iOS 的快捷指令配合 GitHub Actions 实现自动化](https://github.com/yihong0618/gitblog/issues/198) 拿到 action id
 2. 配置 iOS 的捷径，捷径如图
-3. 
+
 ![image](https://user-images.githubusercontent.com/15976103/122154218-0db0b480-ce97-11eb-93bb-5aec07c558dc.png)
 ![image](https://user-images.githubusercontent.com/15976103/122154236-186b4980-ce97-11eb-8e4b-70551a0391ae.png)
 ![image](https://user-images.githubusercontent.com/15976103/122154268-2d47dd00-ce97-11eb-902e-3acf292265a9.png)
