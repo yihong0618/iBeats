@@ -32,10 +32,11 @@ Apple Watch 心率数据采集 - Your Soul, Your Beats!
 2. 配置 iOS 的捷径，捷径如图
 
 ![image](https://user-images.githubusercontent.com/15976103/122154218-0db0b480-ce97-11eb-93bb-5aec07c558dc.png)
+
 ![image](https://user-images.githubusercontent.com/15976103/122154236-186b4980-ce97-11eb-8e4b-70551a0391ae.png)
+
 ![image](https://user-images.githubusercontent.com/15976103/122154268-2d47dd00-ce97-11eb-902e-3acf292265a9.png)
 
-inputs
 ![image](https://user-images.githubusercontent.com/15976103/122174055-fa144680-ceb4-11eb-9be2-3eb83cd516f7.png)
 
 3. 也可以参考 @L1cardo 分享的[捷径](https://www.icloud.com/shortcuts/6ab6047b459c41ad822ad6b94b1c03d4)
