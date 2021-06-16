@@ -43,7 +43,7 @@ def make_summary_str(time_list, value_list):
 def main(time_list_str, value_list_str):
     time_list = parse_ios_str_to_list(time_list_str)
     value_list = parse_ios_str_to_list(value_list_str)
-    value_list = [int(i) for i in value_list]
+    value_list = [int(float(i)) for i in value_list]
 
     s = make_summary_str(time_list, value_list)
     replace_readme_comments("README.md", s, "my_heart_rate")
