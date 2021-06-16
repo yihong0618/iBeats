@@ -1,4 +1,4 @@
-name: Replace README
+name: Replace README AND GENERATE SVG
 
 on:
   workflow_dispatch:
