@@ -5,6 +5,7 @@ from svgwrite.animate import Animate, AnimateTransform
 
 from .config import (
     BASE_HEART_COLOR,
+    BASE_HEART_RATE,
     BASE_HEART_TEXT_COLOR,
     BASE_PATH_TRANSLATE,
     BASE_TEXT_STYLE,
@@ -13,7 +14,7 @@ from .config import (
     THREE_LETTERS_TEXT_TRANSLATE,
     TWO_LETTERS_TEXT_TRANSLATE,
 )
-from .utils import intersperse, make_key_times, make_key_values
+from .utils import make_key_times, make_key_values
 
 
 class Heart:
@@ -53,12 +54,10 @@ class Heart:
         )
 
     def _make_base_animate_transform(self):
-        values = self._make_heart_scale_values()
-        values_str = ";".join(values) + ";"
         return AnimateTransform(
             type="scale",
-            dur=self.dur,
-            values=values_str,
+            dur= str(BASE_HEART_RATE)+'s',
+            values='1; 1.5; 1.25; 1.5; 1.5; 1;',
             repeatCount="indefinite",
             additive="sum",
             transform="scale",
@@ -67,8 +66,8 @@ class Heart:
     def _make_animate(self, index):
         num_count = len(self.values)
         a = Animate(
-            "opacity",
-            dur=self.dur,
+            "visibility",
+            dur=str(num_count*BASE_HEART_RATE)+'s',
             values=make_key_values(num_count, index),
             keyTimes=make_key_times(num_count),
             repeatCount="indefinite",
@@ -91,24 +90,9 @@ class Heart:
         if not self.values:
             raise Exception("No heart rate values set")
         dur_break_points = (5, 10, 15, 20)
+        num_count = len(self.values)
         i = bisect(dur_break_points, len(self.values))
-        self.dur = str(12 * i) + "s"
-
-    def _make_heart_scale_values(self):
-        """
-        break_points -> scale number
-        """
-        break_points = ("0.625", "0.75", "0.875", "1.125", "1.25", "1.375", "1.5")
-        min_value, max_value = min(self.values), max(self.values)
-        interval = (max_value - min_value) / 5
-        heart_rate_points = [min_value + interval * i for i in range(5)]
-        heart_rate_points.append(max_value)
-        heart_scale_list = [
-            break_points[bisect(heart_rate_points, i)] for i in self.values
-        ]
-        # Make the effect of a beating heart
-        heart_scale_list = intersperse(heart_scale_list, "1")
-        return heart_scale_list
+        self.dur = str(num_count)+'s',
 
     def make_heart_svg(self):
         self.__compute_statistics()

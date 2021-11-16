@@ -14,16 +14,6 @@ def make_key_times(num_count):
 
 
 def make_key_values(num_count, index):
-    l = ["0"] * (num_count + 1)
-    l[index] = "1"
+    l = ["hidden"] * (num_count + 1)
+    l[index] = "visible"
     return ";".join(l)
-
-
-def intersperse(lst, item):
-    """
-    from lst = [0.75, 1.2, 1.3, 0.8, 1.4, 1.2]
-    to lst = [0.75, 1, 1.2, 1, 1.3, 1, 0.8, 1, 1.4, 1, 1.2, 1]
-    """
-    result = [item] * (len(lst) * 2 - 1)
-    result[0::2] = lst
-    return result
