@@ -47,12 +47,11 @@ jobs:
       - name: Replace README AND generate SVG
         run: |
           python main.py $'${{ github.event.inputs.time }}' $'${{ github.event.inputs.value }}'
-      - name: Push new README
-        uses: github-actions-x/commit@v2.6
-        with:
-          github-token: ${{ secrets.G_T }}
-          commit-message: "Replace README"
-          files: README.md files
-          rebase: 'true'
-          name: ${{ env.GITHUB_NAME }}
-          email: ${{ env.GITHUB_EMAIL }}
+
+      - name: Push README
+        run: |
+          git config --local user.email "${{ env.GITHUB_EMAIL }}"
+          git config --local user.name "${{ env.GITHUB_EMAIL }}"
+          git commit -a -m 'update new heart' || echo "nothing to commit"
+          git push || echo "nothing to push"
+
