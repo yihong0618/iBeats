@@ -1,0 +1,15 @@
+name: NEW_PR
+
+pull_request_target:
+  types: [opened]
+
+jobs:
+  call_bluetooth_printer:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Call my bluetooth printer
+      run: |
+        curl -i -X POST -H "Content-Type: application/json" -d '{"text": "$PR_TITLE"}' https://app.yihong0618.me/call_bluetooth
+      env:
+        PR_TITLE: ${{ github.event.pull_request.title }}
