@@ -1,7 +1,8 @@
 name: NEW_PR
 
-pull_request_target:
-  types: [opened]
+on:
+  pull_request_target:
+    types: [opened, synchronize, reopened, edited]
 
 jobs:
   call_bluetooth_printer:
