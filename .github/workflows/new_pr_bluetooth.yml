@@ -11,6 +11,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Call my bluetooth printer
       run: |
-        curl -i -X POST -H "Content-Type: application/json" -d '{"text": "$PR_TITLE"}' https://app.yihong0618.me/call_bluetooth
+        curl -i -X POST -H "Content-Type: application/json" -d '{"text": "${{ env.PR_TITLE }}"}' https://app.yihong0618.me/call_bluetooth
       env:
         PR_TITLE: ${{ github.event.pull_request.title }}
