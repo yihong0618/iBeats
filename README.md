@@ -37,9 +37,9 @@ Apple Watch 心率数据采集 - Your Soul, Your Beats!
 # GitHub Actions
 
 1. fork or clone this repo
-2. 更改需要的 secrets (GitHub token)
-3. 配置 iOS 的捷径
-4. 用捷径触发
+2. change the secrets (GitHub token)
+3. config iOS `Shortcuts` 
+4. trigger by iOS `Shortcuts`
 
 # 特别感谢
 - @[wuhan005](https://github.com/wuhan005) 特别棒的项目 [mebeats](https://github.com/wuhan005/mebeats)
