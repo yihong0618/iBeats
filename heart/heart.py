@@ -56,8 +56,8 @@ class Heart:
     def _make_base_animate_transform(self):
         return AnimateTransform(
             type="scale",
-            dur= str(BASE_HEART_RATE)+'s',
-            values='1; 1.5; 1.25; 1.5; 1.5; 1;',
+            dur=str(BASE_HEART_RATE) + "s",
+            values="1; 1.5; 1.25; 1.5; 1.5; 1;",
             repeatCount="indefinite",
             additive="sum",
             transform="scale",
@@ -67,7 +67,7 @@ class Heart:
         num_count = len(self.values)
         a = Animate(
             "visibility",
-            dur=str(num_count*BASE_HEART_RATE)+'s',
+            dur=str(num_count * BASE_HEART_RATE) + "s",
             values=make_key_values(num_count, index),
             keyTimes=make_key_times(num_count),
             repeatCount="indefinite",
@@ -92,7 +92,7 @@ class Heart:
         dur_break_points = (5, 10, 15, 20)
         num_count = len(self.values)
         i = bisect(dur_break_points, len(self.values))
-        self.dur = str(num_count)+'s',
+        self.dur = (str(num_count) + "s",)
 
     def make_heart_svg(self):
         self.__compute_statistics()
