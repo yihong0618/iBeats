@@ -46,5 +46,5 @@ Apple Watch 心率数据采集 - Your Soul, Your Beats!
 - @[L1cardo](https://github.com/L1cardo) idea
 
 # 赞赏
-Enjoy it
+Just enjoy it
 谢谢就够了
