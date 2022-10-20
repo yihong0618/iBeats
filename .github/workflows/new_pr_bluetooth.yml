@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize, reopened, edited]
 
 jobs:
-  call_bluetooth_printer_pr:
+  call_printer_pr:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -19,7 +19,7 @@ jobs:
         PR_TITLE: ${{ github.event.pull_request.title }}
         PR_BODY: ${{ github.event.pull_request.body }}
 
-  call_bluetooth_printer_issue:
+  call_printer_issue:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
