@@ -14,10 +14,10 @@ jobs:
     - name: Call my printer
       if: ${{ github.event.pull_request }}
       run: |
-        curl -i -X POST -H 'x-api-key: ${{ secrets.BLUE }}' -H "Content-Type: application/json" -d "{'type': 'github', 'info_type': 'PR', 'title': '${{ env.PR_TITLE }}', 'content': '${{ env.PR_BODY }}', 'repo': '${{ github.repository }}'}" https://app.yihong0618.me/call_bluetooth
+        curl -i -X POST -H 'x-api-key: ${{ secrets.BLUE }}' -H "Content-Type: application/json" -d '{"type": "github", "info_type": "PR", "title": "${{ env.PR_TITLE }}", "content": "${{ env.PR_BODY }}", "repo":  "${{ github.repository }}"}' https://app.yihong0618.me/call_bluetooth
       env:
-        PR_TITLE: '${{ github.event.pull_request.title }}'
-        PR_BODY: '${{ github.event.pull_request.body }}'
+        PR_TITLE: ${{ github.event.pull_request.title }}
+        PR_BODY: ${{ github.event.pull_request.body }}
 
   call_printer_issue:
     runs-on: ubuntu-latest
@@ -26,8 +26,8 @@ jobs:
     - name: Call my printer
       if: ${{ github.event.issue.title }} != ""
       run: |
-        echo ${ISSUE_TITLE}
-        curl -i -X POST -H 'x-api-key: ${{ secrets.BLUE }}' -H "Content-Type: application/json" -d "{'type': 'github', 'info_type': 'Issue', 'title': '${{ env.ISSUE_TITLE }}', 'content': '${{ env.ISSUE_BODY }}', 'repo': '${{ github.repository }}'}" https://app.yihong0618.me/call_bluetooth
+        curl -i -X POST -H 'x-api-key: ${{ secrets.BLUE }}' -H "Content-Type: application/json" -d '{"type": "github", "info_type": "Issue", "title": '${ISSUE_TITLE}', "content": '${ISSUE_BODY}', "repo":  "${{ github.repository }}"}' https://app.yihong0618.me/call_bluetooth
       env:
         ISSUE_TITLE: '${{ github.event.issue.title }}'
         ISSUE_BODY: '${{ github.event.issue.body }}'
+
