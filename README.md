@@ -1,5 +1,5 @@
 # iBeats
-Apple Watch 心率数据采集 - Your Soul, Your Beats!
+使用Apple Watch 心率数据采集，并将采集数据同步到GitHub主页 - Your Soul, Your Beats!
 
 ![](./files/heart.svg)
 
