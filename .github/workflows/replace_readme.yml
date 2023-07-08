@@ -23,9 +23,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Set up Python
-        uses: actions/setup-python@v1
+        uses: actions/setup-python@v4
         with:
-          python-version: 3.10.8
+          python-version: 3.11.4
       # from pdm
       - name: Set Variables
         id: set_variables
