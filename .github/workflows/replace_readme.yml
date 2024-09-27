@@ -21,28 +21,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.11.4
-      # from pdm
-      - name: Set Variables
-        id: set_variables
-        run: |
-          echo "::set-output name=PY::$(python -c 'import hashlib, sys;print(hashlib.sha256(sys.version.encode()+sys.executable.encode()).hexdigest())')"
-          echo "::set-output name=PIP_CACHE::$(pip cache dir)"
+          python-version: "3.10"
+          cache: "pip" # caching pip dependencies
 
-      - name: Cache PIP
-        uses: actions/cache@v2
-        with:
-          path: ${{ steps.set_variables.outputs.PIP_CACHE }}
-          key: Ubuntu-pip-${{ steps.set_variables.outputs.PY }}
       - name: Install dependencies
         run: |
-          python -m pip install --upgrade pip
           pip install -r requirements.txt
-        if: steps.pip-cache.outputs.cache-hit != 'true'
 
       - name: Replace README AND generate SVG
         run: |
@@ -54,4 +42,3 @@ jobs:
           git config --local user.name "${{ env.GITHUB_NAME }}"
           git commit -a -m 'update new heart' || echo "nothing to commit"
           git push || echo "nothing to push"
-
